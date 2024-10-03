@@ -4,83 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda Online</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-
-        h1, h2 {
-            text-align: center;
-        }
-
-        .producto {
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin: 10px;
-            text-align: center;
-        }
-
-        .carrito {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            max-width: 400px;
-            margin: 20px auto;
-        }
-
-        .carrito ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .carrito li {
-            margin-bottom: 10px;
-        }
-
-        /* Estilos responsive */
-        @media (max-width: 768px) {
-            /* Para pantallas de tabletas y móviles */
-            .producto {
-                width: 90%;
-                margin: 20px auto;
-            }
-
-            .carrito {
-                width: 90%;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 1200px) {
-            /* Para pantallas de portátiles */
-            .producto {
-                width: 45%;
-                display: inline-block;
-                margin: 2%;
-            }
-
-            .carrito {
-                width: 50%;
-                margin: 20px auto;
-            }
-        }
-
-        @media (min-width: 1201px) {
-            /* Para pantallas de escritorio grandes */
-            .producto {
-                width: 30%;
-                display: inline-block;
-                margin: 1.5%;
-            }
-
-            .carrito {
-                width: 30%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+   
 </head>
 <body>
 
@@ -103,39 +28,12 @@
     <ul id="listaCarrito"></ul>
     <p><strong>Total: $<span id="total">0</span></strong></p>
 </div>
+<div>
+    <label for="menu principal">es opcional xq es busacdor: volver al menu principal</label>
+    <a href="https://pagprincipaldom.netlify.app">menu principal</a>
+</div>
 
-<script>
-    // Variables globales
-    var carrito = [];
-    var totalCompra = 0;
-
-    // Función para agregar productos al carrito
-    function agregarAlCarrito(producto, precio) {
-        // Crear un nuevo elemento de la lista
-        var nuevoItem = document.createElement("li");
-        nuevoItem.innerHTML = producto + " - $" + precio + ' <button onclick="eliminarDelCarrito(this, ' + precio + ')">Eliminar</button>';
-
-        // Agregar el elemento al DOM
-        document.getElementById("listaCarrito").appendChild(nuevoItem);
-
-        // Actualizar el total del carrito
-        totalCompra += precio;
-        document.getElementById("total").textContent = totalCompra;
-
-        // Agregar el producto a la lista del carrito
-        carrito.push({ producto, precio });
-    }
-
-    // Función para eliminar productos del carrito
-    function eliminarDelCarrito(elemento, precio) {
-        // Eliminar el elemento de la lista en el DOM
-        elemento.parentElement.remove();
-
-        // Actualizar el total del carrito
-        totalCompra -= precio;
-        document.getElementById("total").textContent = totalCompra;
-    }
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
