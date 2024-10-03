@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.producto {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.carrito {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.carrito ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.carrito li {
+    margin-bottom: 10px;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    /* Para pantallas de tabletas y móviles */
+    .producto {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .carrito {
+        width: 90%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    /* Para pantallas de portátiles */
+    .producto {
+        width: 45%;
+        display: inline-block;
+        margin: 2%;
+    }
+
+    .carrito {
+        width: 50%;
+        margin: 20px auto;
+    }
+}
+
+@media (min-width: 1201px) {
+    /* Para pantallas de escritorio grandes */
+    .producto {
+        width: 30%;
+        display: inline-block;
+        margin: 1.5%;
+    }
+
+    .carrito {
+        width: 30%;
+    }
+}
